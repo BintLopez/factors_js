@@ -26,9 +26,6 @@ $background: none;
 	min-height: 100px;
 	border-radius: 10px;
 	margin: 20px auto;
-	@if ($type == $output) {
-		display: none;
-	}
 }
 
 @mixin hr {

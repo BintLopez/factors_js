@@ -40,7 +40,7 @@ $( document ).ready(function() {
 
 	var $container = $('#container');
 	var $input = $('#input');
-	var $output = $('#output');
+	
 	var $input_array = $('<ul class="array">');
 
 	for (var i=0; i < input_array.length; i++) {
@@ -50,10 +50,25 @@ $( document ).ready(function() {
 			var $li = $('<li>'+" , "+'</li>')
 			$input_array.append($li);
 		}
-		else {
-			console.log("not the last item in array")
-		}
 	}
 
 	$input.append($input_array);
+
+	var output_display = function() {
+		var $output = $('#output');
+		var $ul = $('<ul>');
+		var results = array_map;
+		for (r in results) {
+			var r_value = results[r].value;
+			var r_factors = results[r].factors;
+			var $li = $('<li>'+r_value+":");
+			var $array_ul = $('<ul class="array">');
+			var $array_li = $('<li>'+r_factors+'</li>')
+			$array_li.append($array_ul);
+			$array_ul.append($li);
+			console.log(r_value+": "+r_factors);
+		}
+		$li.append($ul);
+	}
+	output_display();
 });
