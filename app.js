@@ -2,15 +2,18 @@
 //instead should take user input
 var input_array = [10, 5, 2, 20];
 console.log(input_array);
-
 var array_map = [];
-for (var i = 0; i < input_array.length; i++) {
-	var val = input_array[i];
-	array_map.push({
-		value: val,
-		factors: []
-	});
-};
+
+
+var make_array_map = function() {
+	for (var i = 0; i < input_array.length; i++) {
+		var val = input_array[i];
+		array_map.push({
+			value: val,
+			factors: []
+		});
+	};
+}
 
 var is_factor = function(num1, num2) {
 	if (num1 % num2 === 0) {
@@ -63,6 +66,7 @@ var output_display = function() {
 
 $( document ).ready(function() {
 
+	make_array_map();
 	get_factors();
 	console.log(array_map);
 
