@@ -12,6 +12,10 @@
 //   }
 // }());
 
+//initial array
+//instead should take user input
+
+
 var input_array = [10, 5, 2, 20];
 console.log(input_array);
 
@@ -50,13 +54,20 @@ $( document ).ready(function() {
 	get_factors();
 	console.log(array_map);
 
-	var $solution = $('#solution');
-	var $input_array = $('<ul>');
+	var $container = $('#container');
+	var $input_array = $('<ul class="array">');
 
 	for (var i=0; i < input_array.length; i++) {
 		var $li = $('<li>'+input_array[i]+'</li>');
 		$input_array.append($li);
+		if (i !== input_array.length-1) {
+			var $li = $('<li>'+" , "+'</li>')
+			$input_array.append($li);
+		}
+		else {
+			console.log("not the last item in array")
+		}
 	}
 
-	$solution.append($input_array);
+	$container.append($input_array);
 });

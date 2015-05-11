@@ -39,6 +39,8 @@ $( document ).ready(function() {
 	console.log(array_map);
 
 	var $container = $('#container');
+	var $input = $('#input');
+	var $output = $('#output');
 	var $input_array = $('<ul class="array">');
 
 	for (var i=0; i < input_array.length; i++) {
@@ -53,5 +55,5 @@ $( document ).ready(function() {
 		}
 	}
 
-	$container.append($input_array);
+	$input.append($input_array);
 });
