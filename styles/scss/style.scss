@@ -47,10 +47,10 @@ hr {
 		list-style-type: none;
 	}
 	&:before {
-		@include array_style(before)
+		@include array_ul(before)
 	}
 	&:after {
-		@include array_style(after)
+		@include array_ul(after)
 	}
 }
 
@@ -59,5 +59,8 @@ hr {
 }
 
 #output {
-	@include input_output($output)
+	@include input_output($output);
+	ul li {
+		list-style-type: none;
+	}
 }

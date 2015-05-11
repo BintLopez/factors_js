@@ -8,7 +8,7 @@ $output: $yellow;
 $background: none;
 
 
-@mixin array_style($position) {
+@mixin array_ul($position) {
 	@if ($position == before) {
 		content: "[";
     	margin-left: 6px;
