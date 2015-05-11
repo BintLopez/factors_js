@@ -1,0 +1,13 @@
+$test: red;
+
+@mixin array_style($position) {
+	@if ($position == before) {
+		content: "[";
+    	margin-left: 6px;
+	}
+	@else {
+		content: "]";
+		margin-right: 6px;
+	}
+
+}
