@@ -12,9 +12,11 @@ body {
 p, li {
 	font-family: $main_font;
 	font-size: $default_size;
-	a {
-		text-decoration: underline;
-	}
+}
+
+a {
+	text-decoration: underline;
+	color: $link;
 }
 
 header {
@@ -28,6 +30,7 @@ header {
 		font-family: $header_font;
 		font-style: italic;
 		font-size: .75em;
+		color: $tan;
 	}
 }
 
