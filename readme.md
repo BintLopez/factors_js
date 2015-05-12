@@ -10,6 +10,3 @@ Could perhaps make this more performant by changing approach altogether. In curr
 
 ###3. Reversing functionality
 I think reversing functionality would not change how the program is caching, though it would change the logic determining what values are set to the keys in the cache.
-
-###Observation
-When caching to localStorage, my array was stored out of order. Would like to try [this approach](http://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm)
