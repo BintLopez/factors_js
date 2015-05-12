@@ -7,6 +7,11 @@ $input: $white;
 $output: $yellow;
 $background: none;
 
+$main_font: 'Verdana', sans-serif;
+$header_font: 'Georgia', serif;
+
+$default_size: 1em;
+
 
 @mixin array_ul($position) {
 	@if ($position == before) {
@@ -21,7 +26,6 @@ $background: none;
 }
 
 @mixin input_output($type) {
-	//display: inline-block;
 	background: $type;
 	width: inherit;
 	min-height: 100px;
@@ -29,10 +33,11 @@ $background: none;
 	margin: 20px auto;
 	padding: 20px;
 	h3 {
-		font-family: 'Verdana', sans-serif;
+		font-family: $main_font;
 		text-decoration: underline;
 		font-weight: normal;
 		margin-bottom: 10px;
+		font-size: $default_size;
 	}
 }
 

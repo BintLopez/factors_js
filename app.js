@@ -4,7 +4,6 @@ var input_array = [10, 5, 2, 20];
 console.log(input_array);
 var array_map = [];
 
-
 var make_array_map = function() {
 	for (var i = 0; i < input_array.length; i++) {
 		var val = input_array[i];
@@ -30,10 +29,8 @@ var get_factors = function() {
 			if (is_factor(array_map[i].value, input_array[x]) && i != x) {
 				array_map[i].factors.push(input_array[x]);
 			}
-			else {
-			}
-		};
-	};
+		}
+	}
 }
 
 var input_display = function() {
