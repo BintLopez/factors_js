@@ -1,7 +1,4 @@
-//initial array
-//instead should take user input
 var input_array = [10, 5, 2, 20];
-console.log(input_array);
 var array_map = [];
 
 var make_array_map = function() {
@@ -47,12 +44,11 @@ var output_display = function() {
 	var $output = $('#output');
 	var $ul = $('<ul>');
 	var results = array_map;
-	for (r in results) {
+	for (var r=0; r < results.length; r++) {
 		var r_value = results[r].value;
 		var r_factors = results[r].factors;
 		var $li = $('<li>'+r_value+": "+r_factors+'</li>');
 		$ul.append($li);
-		//console.log(r_value+": "+r_factors);
 	}
 	$output.append($ul);
 }
@@ -61,7 +57,6 @@ $( document ).ready(function() {
 
 	make_array_map();
 	get_factors();
-	console.log(array_map);
 
 	var $container = $('#container');
 
