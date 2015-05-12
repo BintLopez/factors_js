@@ -25,6 +25,17 @@ $default_size: 1em;
 
 }
 
+@mixin array_li($last_li: bool) {
+	@if($last_li == true) {
+		content: none;
+		margin-right: 0;
+	}
+	@else {
+		content: ",";
+		margin-right: 6px; 
+	}
+}
+
 @mixin input_output($type) {
 	background: $type;
 	width: inherit;

@@ -39,6 +39,12 @@ hr {
   .array li {
     display: inline;
     list-style-type: none; }
+    .array li:after {
+      content: ",";
+      margin-right: 6px; }
+    .array li:last-child:after {
+      content: none;
+      margin-right: 0; }
   .array:before {
     content: "[";
     margin-left: 6px; }

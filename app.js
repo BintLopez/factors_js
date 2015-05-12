@@ -39,10 +39,10 @@ var input_display = function() {
 	for (var i=0; i < input_array.length; i++) {
 		var $li = $('<li>'+input_array[i]+'</li>');
 		$input_array.append($li);
-		if (i !== input_array.length-1) {
-			var $li = $('<li>'+" , "+'</li>')
-			$input_array.append($li);
-		}
+		// if (i !== input_array.length-1) {
+		// 	var $li = $('<li>'+" , "+'</li>')
+		// 	$input_array.append($li);
+		// }
 	}
 	$input.append($input_array);
 }

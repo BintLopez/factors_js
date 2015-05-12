@@ -1,17 +1,11 @@
 //initial array
 //instead should take user input
 var input_array = [10, 5, 2, 20];
-console.log(input_array);
-var array_map = [];
 
-var make_array_map = function() {
+var store_array = function() {
 	for (var i = 0; i < input_array.length; i++) {
-		var val = input_array[i];
-		array_map.push({
-			value: val,
-			factors: []
-		});
-	};
+		localStorage.setItem(input_array[i], []);
+	}
 }
 
 var is_factor = function(num1, num2) {
@@ -23,13 +17,30 @@ var is_factor = function(num1, num2) {
 	}
 }
 
+// var get_factors = function() {
+// 	for (var i = 0; i < input_array.length; i++) {
+// 		var cache_key_val = localStorage.getItem('"'+input_array[i]+'"')
+// 		// if (is_factor(array_map[i].value, input_array[x]) && i != x) {
+// 		// 	array_map[i].factors.push(input_array[x]);
+// 		// }
+// 	}
+// }
+
 var get_factors = function() {
-	for (var i = 0; i < array_map.length; i++) {
+	for (var i = 0; i < localStorage.length; i++) {
+		var cache_key_val = parseInt(localStorage.key(i));
+		//console.log(cache_key_val);
+		var factors_to_cache = [];
 		for (var x = 0; x < input_array.length; x++) {
-			if (is_factor(array_map[i].value, input_array[x]) && i != x) {
-				array_map[i].factors.push(input_array[x]);
+			if (is_factor(cache_key_val, input_array[x]) && cache_key_val !== input_array[x]) {
+				//console.log(cache_key_val + " has "+ input_array[x] +" as a factor.")
+				factors_to_cache.push(input_array[x]);
 			}
 		}
+		//console.log("The factors of "+cache_key_val+" are "+ factors_to_cache);
+		factors_to_cache = factors_to_cache.toString();
+		localStorage.setItem(cache_key_val, factors_to_cache);
+		//console.log(localStorage.getItem(cache_key_val)+ " is a factor of "+cache_key_val);
 	}
 }
 
@@ -50,7 +61,7 @@ var input_display = function() {
 var output_display = function() {
 	var $output = $('#output');
 	var $ul = $('<ul>');
-	var results = array_map;
+	var results = localStorage.getItem();
 	for (r in results) {
 		var r_value = results[r].value;
 		var r_factors = results[r].factors;
@@ -63,7 +74,7 @@ var output_display = function() {
 
 $( document ).ready(function() {
 
-	make_array_map();
+	store_array();
 	get_factors();
 	console.log(array_map);
 

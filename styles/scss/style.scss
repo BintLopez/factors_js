@@ -45,6 +45,12 @@ hr {
 	li {
 		display: inline;
 		list-style-type: none;
+		&:after {
+			@include array_li();
+		}
+		&:last-child:after {
+			@include array_li($last_li: true);
+		}
 	}
 	&:before {
 		@include array_ul(before)
