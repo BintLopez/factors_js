@@ -4,6 +4,7 @@ var input_array = [10, 5, 2, 20];
 
 var store_array = function() {
 	for (var i = 0; i < input_array.length; i++) {
+		console.log(input_array[i]);
 		localStorage.setItem(input_array[i], []);
 	}
 }
