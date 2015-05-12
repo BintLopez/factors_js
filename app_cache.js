@@ -17,15 +17,6 @@ var is_factor = function(num1, num2) {
 	}
 }
 
-// var get_factors = function() {
-// 	for (var i = 0; i < input_array.length; i++) {
-// 		var cache_key_val = localStorage.getItem('"'+input_array[i]+'"')
-// 		// if (is_factor(array_map[i].value, input_array[x]) && i != x) {
-// 		// 	array_map[i].factors.push(input_array[x]);
-// 		// }
-// 	}
-// }
-
 var get_factors = function() {
 	for (var i = 0; i < localStorage.length; i++) {
 		var cache_key_val = parseInt(localStorage.key(i));
@@ -40,7 +31,6 @@ var get_factors = function() {
 		//console.log("The factors of "+cache_key_val+" are "+ factors_to_cache);
 		factors_to_cache = factors_to_cache.toString();
 		localStorage.setItem(cache_key_val, factors_to_cache);
-		//console.log(localStorage.getItem(cache_key_val)+ " is a factor of "+cache_key_val);
 	}
 }
 
@@ -57,13 +47,11 @@ var input_display = function() {
 var output_display = function() {
 	var $output = $('#output');
 	var $ul = $('<ul>');
-	var results = localStorage.getItem();
-	for (r in results) {
-		var r_value = results[r].value;
-		var r_factors = results[r].factors;
-		var $li = $('<li>'+r_value+": "+r_factors+'</li>');
+	for (var i = 0; i < localStorage.length; i++) {
+		var o_value = localStorage.key(i);
+		var o_factors = localStorage.getItem(o_value);
+		var $li = $('<li>'+o_value+": "+o_factors+'</li>');
 		$ul.append($li);
-		//console.log(r_value+": "+r_factors);
 	}
 	$output.append($ul);
 }
